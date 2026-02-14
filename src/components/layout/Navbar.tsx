@@ -33,6 +33,16 @@ export function Navbar() {
       </div>
 
       <div className="flex items-center gap-2">
+        <span
+          className="px-2 py-1 text-xs font-semibold rounded-full"
+          style={{
+            backgroundColor: "#fbbf24",
+            color: "#1f2937",
+          }}
+        >
+          Test Mode
+        </span>
+
         <button
           onClick={toggleTheme}
           className="p-2 rounded-lg hover:opacity-80 transition"
