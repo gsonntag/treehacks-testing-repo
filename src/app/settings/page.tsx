@@ -1,11 +1,8 @@
 "use client";
 
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
-import { useTheme } from "@/components/ThemeProvider";
 
 export default function SettingsPage() {
-  const { theme, toggleTheme } = useTheme();
-
   return (
     <div className="space-y-8">
       <Breadcrumbs items={[{ label: "Dashboard", href: "/" }, { label: "Settings" }]} />
@@ -19,15 +16,14 @@ export default function SettingsPage() {
         <div className="flex items-center justify-between">
           <div>
             <p className="font-medium">Theme</p>
-            <p className="text-sm opacity-70">Switch between light and dark mode</p>
+            <p className="text-sm opacity-70">Light mode is enabled</p>
           </div>
-          <button
-            onClick={toggleTheme}
+          <span
             className="px-4 py-2 rounded-lg border"
             style={{ borderColor: "var(--border)" }}
           >
-            {theme === "dark" ? "☀️ Light" : "🌙 Dark"}
-          </button>
+            ☀️ Light
+          </span>
         </div>
       </div>
 
