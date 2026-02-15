@@ -5,17 +5,17 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const navItems = [
-  { href: "/", label: "Dashboard", icon: "📊" },
-  { href: "/analytics", label: "Analytics", icon: "📈" },
-  { href: "/projects", label: "Projects", icon: "📁" },
-  { href: "/team", label: "Team", icon: "👥" },
-  { href: "/settings", label: "Settings", icon: "⚙️" },
-  { href: "/reports", label: "Reports", icon: "📋" },
+  { href: "/", label: "Dashboard", icon: "🐼" },
+  { href: "/analytics", label: "Analytics", icon: "🦙" },
+  { href: "/projects", label: "Projects", icon: "🐼" },
+  { href: "/team", label: "Team", icon: "🦙" },
+  { href: "/settings", label: "Settings", icon: "🐼" },
+  { href: "/reports", label: "Reports", icon: "🦙" },
 ];
 
 const secondaryItems = [
-  { href: "/help", label: "Help", icon: "❓" },
-  { href: "/feedback", label: "Feedback", icon: "💬" },
+  { href: "/help", label: "Help", icon: "🐼" },
+  { href: "/feedback", label: "Feedback", icon: "🦙" },
 ];
 
 export function Sidebar() {
@@ -81,7 +81,7 @@ export function Sidebar() {
 
       {!collapsed && (
         <div className="p-3 border-t text-xs opacity-60" style={{ borderColor: "var(--border)" }}>
-          v2.4.1 • CommandHub
+          v2.4.1 • CommandHub 🐼🦙
         </div>
       )}
     </aside>

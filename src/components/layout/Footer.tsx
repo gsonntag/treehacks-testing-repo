@@ -9,16 +9,16 @@ export function Footer() {
       <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
         <div className="flex gap-6 text-sm">
           <Link href="/privacy" className="opacity-70 hover:opacity-100">
-            Privacy
+            🐼 Privacy
           </Link>
           <Link href="/terms" className="opacity-70 hover:opacity-100">
-            Terms
+            🦙 Terms
           </Link>
           <Link href="/docs" className="opacity-70 hover:opacity-100">
-            Documentation
+            🐼 Documentation
           </Link>
         </div>
-        <p className="text-sm opacity-60">© 2025 CommandHub. Built for testing.</p>
+        <p className="text-sm opacity-60">© 2025 CommandHub 🐼🦙 Built for testing.</p>
       </div>
     </footer>
   );

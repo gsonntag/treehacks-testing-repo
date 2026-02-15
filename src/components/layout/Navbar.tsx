@@ -28,7 +28,7 @@ export function Navbar() {
               color: "var(--foreground)",
             }}
           />
-          <span className="absolute left-3 top-1/2 -translate-y-1/2 text-lg opacity-60">🔍</span>
+          <span className="absolute left-3 top-1/2 -translate-y-1/2 text-lg opacity-60">🐼</span>
         </div>
       </div>
 
@@ -48,7 +48,7 @@ export function Navbar() {
             className="p-2 rounded-lg hover:opacity-80 transition relative"
             style={{ backgroundColor: "var(--input-bg)" }}
           >
-            🔔
+            🦙
             <span className="absolute top-1 right-1 w-2 h-2 rounded-full bg-red-500" />
           </button>
           {notificationsOpen && (
@@ -59,11 +59,11 @@ export function Navbar() {
               <h3 className="font-semibold mb-3">Notifications</h3>
               <div className="space-y-2 text-sm">
                 <div className="p-2 rounded" style={{ backgroundColor: "var(--input-bg)" }}>
-                  <p className="font-medium">Deploy completed</p>
+                  <p className="font-medium">🐼 Deploy completed</p>
                   <p className="opacity-70 text-xs">2 min ago</p>
                 </div>
                 <div className="p-2 rounded" style={{ backgroundColor: "var(--input-bg)" }}>
-                  <p className="font-medium">New team member</p>
+                  <p className="font-medium">🦙 New team member</p>
                   <p className="opacity-70 text-xs">1 hour ago</p>
                 </div>
               </div>
@@ -84,9 +84,9 @@ export function Navbar() {
             </div>
           }
           items={[
-            { id: "profile", label: "Profile" },
-            { id: "settings", label: "Settings" },
-            { id: "logout", label: "Log out" },
+            { id: "profile", label: "🐼 Profile" },
+            { id: "settings", label: "🦙 Settings" },
+            { id: "logout", label: "🐼 Log out" },
           ]}
         />
       </div>
