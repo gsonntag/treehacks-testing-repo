@@ -11,6 +11,7 @@ import { Modal } from "@/components/ui/Modal";
 import { Accordion } from "@/components/ui/Accordion";
 import { ProgressBar } from "@/components/ui/ProgressBar";
 import { FormDemo } from "@/components/forms/FormDemo";
+import { ForeignRide } from "@/components/fun/ForeignRide";
 
 const tableData = [
   { id: 1, project: "Alpha", status: "Active", progress: 85, owner: "Jane" },
@@ -31,6 +32,9 @@ export default function Home() {
         <h1 className="text-2xl font-bold mb-2">Dashboard</h1>
         <p className="opacity-70">Welcome back! Here&apos;s your overview.</p>
       </div>
+
+      {/* 🔥 Cool Shiii 🔥 */}
+      <ForeignRide />
 
       {/* Stats Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
