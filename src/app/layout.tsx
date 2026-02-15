@@ -6,8 +6,8 @@ import { Footer } from "@/components/layout/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "CommandHub - Dashboard",
-  description: "A complex frontend for testing AI dev tools",
+  title: "CommandHub - Miami",
+  description: "A Miami-themed dashboard for testing AI dev tools",
 };
 
 export default function RootLayout({

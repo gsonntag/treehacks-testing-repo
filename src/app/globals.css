@@ -1,37 +1,37 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0f1419;
-  --foreground: #e6edf3;
-  --muted: #8b949e;
-  --border: #30363d;
-  --primary: #58a6ff;
-  --primary-hover: #79b8ff;
-  --secondary: #f0883e;
-  --accent: #3fb950;
-  --danger: #f85149;
-  --warning: #d29922;
-  --card-bg: #161b22;
-  --card-border: #21262d;
-  --input-bg: #0d1117;
-  --sidebar-bg: #010409;
+  --background: #0a0a1a;
+  --foreground: #f0e6ff;
+  --muted: #9d8ab8;
+  --border: #3d2b5c;
+  --primary: #ff2d95;
+  --primary-hover: #ff5aaf;
+  --secondary: #00d4ff;
+  --accent: #00ff9f;
+  --danger: #ff4757;
+  --warning: #ffbe0b;
+  --card-bg: #12122a;
+  --card-border: #2d1f4a;
+  --input-bg: #0d0d20;
+  --sidebar-bg: #08081a;
 }
 
 [data-theme="light"] {
-  --background: #f6f8fa;
-  --foreground: #1f2328;
-  --muted: #656d76;
-  --border: #d0d7de;
-  --primary: #0969da;
-  --primary-hover: #0550ae;
-  --secondary: #bf8700;
-  --accent: #1a7f37;
-  --danger: #cf222e;
-  --warning: #9a6700;
+  --background: #fff5f9;
+  --foreground: #1a0d2e;
+  --muted: #6b5a7a;
+  --border: #e8c1d8;
+  --primary: #e91e8c;
+  --primary-hover: #c41677;
+  --secondary: #00a8cc;
+  --accent: #00cc7a;
+  --danger: #dc3545;
+  --warning: #e6a700;
   --card-bg: #ffffff;
-  --card-border: #d0d7de;
-  --input-bg: #ffffff;
-  --sidebar-bg: #f6f8fa;
+  --card-border: #ffd6eb;
+  --input-bg: #fff0f7;
+  --sidebar-bg: #ffe6f2;
 }
 
 @theme inline {
