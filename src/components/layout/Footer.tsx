@@ -18,7 +18,7 @@ export function Footer() {
             Documentation
           </Link>
         </div>
-        <p className="text-sm opacity-60">© 2025 CommandHub. Built for testing.</p>
+        <p className="text-sm opacity-60">🐼🦙 © 2025 CommandHub. Built for testing. 🦙🐼</p>
       </div>
     </footer>
   );

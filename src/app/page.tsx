@@ -39,28 +39,28 @@ export default function Home() {
           value={24}
           change="+3 from last week"
           changeType="positive"
-          icon="📁"
+          icon="🐼"
         />
         <StatCard
           title="Team Members"
           value={12}
           change="+1 new"
           changeType="positive"
-          icon="👥"
+          icon="🦙"
         />
         <StatCard
           title="Deployments"
           value={156}
           change="-5% from last month"
           changeType="negative"
-          icon="🚀"
+          icon="🐼"
         />
         <StatCard
           title="Uptime"
           value="99.9%"
           change="Stable"
           changeType="neutral"
-          icon="✅"
+          icon="🦙"
         />
       </div>
 
@@ -98,19 +98,19 @@ export default function Home() {
               className="w-full text-left px-4 py-3 rounded-lg hover:opacity-90 transition"
               style={{ backgroundColor: "var(--input-bg)" }}
             >
-              ➕ New Project
+              🐼 New Project
             </button>
             <button
               className="w-full text-left px-4 py-3 rounded-lg hover:opacity-90 transition"
               style={{ backgroundColor: "var(--input-bg)" }}
             >
-              📤 Export Report
+              🦙 Export Report
             </button>
             <button
               className="w-full text-left px-4 py-3 rounded-lg hover:opacity-90 transition"
               style={{ backgroundColor: "var(--input-bg)" }}
             >
-              ⚙️ Settings
+              🐼 Settings
             </button>
           </div>
         </div>
