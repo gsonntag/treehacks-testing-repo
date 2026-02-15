@@ -21,7 +21,7 @@ export default function RootLayout({
         <ThemeProvider>
           <div className="flex min-h-screen">
             <Sidebar />
-            <div className="flex-1 flex flex-col min-w-0">
+            <div className="flex-1 flex flex-col min-w-0 overflow-auto h-screen">
               <Navbar />
               <main className="flex-1 p-6">{children}</main>
               <Footer />
