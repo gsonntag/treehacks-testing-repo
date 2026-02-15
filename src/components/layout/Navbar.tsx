@@ -21,7 +21,7 @@ export function Navbar() {
             placeholder="Search projects, team, docs..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-10 pr-4 py-2 rounded-lg text-sm focus:outline-none focus:ring-2"
+            className="w-full pl-10 pr-16 py-2 rounded-lg text-sm focus:outline-none focus:ring-2"
             style={{
               backgroundColor: "var(--input-bg)",
               border: "1px solid var(--border)",
@@ -29,6 +29,13 @@ export function Navbar() {
             }}
           />
           <span className="absolute left-3 top-1/2 -translate-y-1/2 text-lg opacity-60">🔍</span>
+          <kbd
+            className="absolute right-3 top-1/2 -translate-y-1/2 px-2 py-0.5 text-xs rounded hidden sm:inline-block"
+            style={{ backgroundColor: "var(--card-bg)", color: "var(--muted)", border: "1px solid var(--border)" }}
+            title="Open command palette"
+          >
+            ⌘K
+          </kbd>
         </div>
       </div>
 
