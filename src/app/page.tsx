@@ -11,6 +11,7 @@ import { Modal } from "@/components/ui/Modal";
 import { Accordion } from "@/components/ui/Accordion";
 import { ProgressBar } from "@/components/ui/ProgressBar";
 import { FormDemo } from "@/components/forms/FormDemo";
+import { TodoTab } from "@/components/dashboard/TodoTab";
 
 const tableData = [
   { id: 1, project: "Alpha", status: "Active", progress: 85, owner: "Jane" },
@@ -197,6 +198,11 @@ export default function Home() {
                   ]}
                 />
               ),
+            },
+            {
+              id: "todos",
+              label: "Team Todos",
+              content: <TodoTab />,
             },
             {
               id: "form",
