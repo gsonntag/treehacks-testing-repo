@@ -1,0 +1,4 @@
+name: Treehacks-Vibe-Bot
+permissions:
+  statuses: read
+  checks: read
