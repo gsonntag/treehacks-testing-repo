@@ -7,42 +7,43 @@ interface ThemeToggleProps {
   size?: "sm" | "md";
 }
 
+const themeConfig = {
+  dark: { icon: "🌙", label: "Dark", next: "light" },
+  light: { icon: "☀️", label: "Light", next: "miami" },
+  miami: { icon: "🌴", label: "Miami", next: "dark" },
+} as const;
+
 export function ThemeToggle({ showLabel = false, size = "md" }: ThemeToggleProps) {
   const { theme, toggleTheme } = useTheme();
-  const isLight = theme === "light";
+  const config = themeConfig[theme];
 
-  const toggleWidth = size === "sm" ? "w-12" : "w-14";
-  const toggleHeight = size === "sm" ? "h-6" : "h-7";
-  const knobSize = size === "sm" ? "w-5 h-5" : "w-6 h-6";
-  const translateX = size === "sm" ? "translate-x-6" : "translate-x-7";
+  const buttonSize = size === "sm" ? "px-3 py-1.5" : "px-4 py-2";
+  const textSize = size === "sm" ? "text-xs" : "text-sm";
 
   return (
     <div className="flex items-center gap-3">
       {showLabel && (
         <span className="text-sm font-medium" style={{ color: "var(--foreground)" }}>
-          {isLight ? "Light" : "Dark"}
+          {config.label}
         </span>
       )}
       <button
         onClick={toggleTheme}
-        className={`${toggleWidth} ${toggleHeight} rounded-full p-0.5 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2`}
+        className={`${buttonSize} ${textSize} rounded-full flex items-center gap-2 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 hover:scale-105`}
         style={{
-          backgroundColor: isLight ? "var(--primary)" : "var(--border)",
+          backgroundColor: theme === "miami" ? "linear-gradient(135deg, #00d4ff, #ff6b9d)" : "var(--card-bg)",
+          background: theme === "miami" ? "linear-gradient(135deg, #00d4ff, #ff6b9d)" : "var(--card-bg)",
+          border: "1px solid var(--border)",
+          color: "var(--foreground)",
           // @ts-expect-error CSS custom property
           "--tw-ring-offset-color": "var(--background)",
           "--tw-ring-color": "var(--primary)",
         }}
-        title={`Switch to ${isLight ? "dark" : "light"} mode`}
-        aria-label={`Switch to ${isLight ? "dark" : "light"} mode`}
+        title={`Switch to ${config.next} mode`}
+        aria-label={`Current: ${config.label} mode. Click to switch to ${config.next} mode`}
       >
-        <div
-          className={`${knobSize} rounded-full flex items-center justify-center transition-transform duration-300 ${
-            isLight ? translateX : "translate-x-0"
-          }`}
-          style={{ backgroundColor: "var(--card-bg)" }}
-        >
-          <span className="text-xs">{isLight ? "☀️" : "🌙"}</span>
-        </div>
+        <span>{config.icon}</span>
+        <span className="font-medium">{config.label}</span>
       </button>
     </div>
   );
