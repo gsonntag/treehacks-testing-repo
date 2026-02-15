@@ -95,19 +95,19 @@ export default function Home() {
           <div className="space-y-2">
             <button
               onClick={() => setModalOpen(true)}
-              className="w-full text-left px-4 py-3 rounded-lg hover:opacity-90 transition"
+              className="w-full text-left px-4 py-3 rounded-full hover:opacity-90 transition"
               style={{ backgroundColor: "var(--input-bg)" }}
             >
               ➕ New Project
             </button>
             <button
-              className="w-full text-left px-4 py-3 rounded-lg hover:opacity-90 transition"
+              className="w-full text-left px-4 py-3 rounded-full hover:opacity-90 transition"
               style={{ backgroundColor: "var(--input-bg)" }}
             >
               📤 Export Report
             </button>
             <button
-              className="w-full text-left px-4 py-3 rounded-lg hover:opacity-90 transition"
+              className="w-full text-left px-4 py-3 rounded-full hover:opacity-90 transition"
               style={{ backgroundColor: "var(--input-bg)" }}
             >
               ⚙️ Settings

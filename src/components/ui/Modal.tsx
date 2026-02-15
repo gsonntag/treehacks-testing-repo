@@ -40,7 +40,7 @@ export function Modal({ isOpen, onClose, title, children }: ModalProps) {
           <h2 className="text-lg font-semibold">{title}</h2>
           <button
             onClick={onClose}
-            className="p-2 rounded-lg hover:opacity-80"
+            className="p-2 rounded-full hover:opacity-80"
             style={{ backgroundColor: "var(--input-bg)" }}
           >
             ✕

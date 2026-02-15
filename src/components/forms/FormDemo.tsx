@@ -75,14 +75,14 @@ export function FormDemo() {
       <div className="flex gap-2 pt-2">
         <button
           type="submit"
-          className="px-4 py-2 rounded-lg font-medium text-white"
+          className="px-4 py-2 rounded-full font-medium text-white"
           style={{ backgroundColor: "var(--primary)" }}
         >
           Save
         </button>
         <button
           type="button"
-          className="px-4 py-2 rounded-lg border"
+          className="px-4 py-2 rounded-full border"
           style={{ borderColor: "var(--border)" }}
         >
           Cancel

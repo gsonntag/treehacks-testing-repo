@@ -34,7 +34,7 @@ export function Dropdown({ trigger, items }: DropdownProps) {
       </button>
       {open && (
         <div
-          className="absolute right-0 mt-2 py-1 rounded-lg shadow-xl border min-w-[160px] z-50"
+          className="absolute right-0 mt-2 py-1 rounded-2xl shadow-xl border min-w-[160px] z-50"
           style={{ backgroundColor: "var(--card-bg)", borderColor: "var(--border)" }}
         >
           {items.map((item) => (
@@ -44,7 +44,7 @@ export function Dropdown({ trigger, items }: DropdownProps) {
                 item.onClick?.();
                 setOpen(false);
               }}
-              className="w-full text-left px-4 py-2 text-sm hover:opacity-90"
+              className="w-full text-left px-4 py-2 text-sm hover:opacity-90 first:rounded-t-xl last:rounded-b-xl"
               style={{ backgroundColor: "transparent" }}
             >
               {item.label}

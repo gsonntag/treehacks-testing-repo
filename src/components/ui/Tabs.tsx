@@ -22,7 +22,7 @@ export function Tabs({ tabs }: TabsProps) {
           <button
             key={tab.id}
             onClick={() => setActive(tab.id)}
-            className={`px-4 py-2 text-sm font-medium rounded-t-lg transition ${
+            className={`px-4 py-2 text-sm font-medium rounded-t-full transition ${
               active === tab.id ? "" : "opacity-70 hover:opacity-100"
             }`}
             style={{

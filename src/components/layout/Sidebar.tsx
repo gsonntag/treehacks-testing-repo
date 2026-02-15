@@ -37,7 +37,7 @@ export function Sidebar() {
         )}
         <button
           onClick={() => setCollapsed(!collapsed)}
-          className="p-2 rounded hover:opacity-80 transition"
+          className="p-2 rounded-full hover:opacity-80 transition"
           style={{ backgroundColor: "var(--card-bg)" }}
         >
           {collapsed ? "→" : "←"}

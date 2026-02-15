@@ -84,7 +84,7 @@ export function DataTable<T extends Record<string, unknown>>({
             <button
               onClick={() => setPage((p) => Math.max(0, p - 1))}
               disabled={page === 0}
-              className="px-3 py-1 rounded disabled:opacity-50"
+              className="px-3 py-1 rounded-full disabled:opacity-50"
               style={{ backgroundColor: "var(--input-bg)" }}
             >
               Previous
@@ -92,7 +92,7 @@ export function DataTable<T extends Record<string, unknown>>({
             <button
               onClick={() => setPage((p) => Math.min(totalPages - 1, p + 1))}
               disabled={page >= totalPages - 1}
-              className="px-3 py-1 rounded disabled:opacity-50"
+              className="px-3 py-1 rounded-full disabled:opacity-50"
               style={{ backgroundColor: "var(--input-bg)" }}
             >
               Next
