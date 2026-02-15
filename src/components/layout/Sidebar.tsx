@@ -11,6 +11,7 @@ const navItems = [
   { href: "/team", label: "Team", icon: "👥" },
   { href: "/settings", label: "Settings", icon: "⚙️" },
   { href: "/reports", label: "Reports", icon: "📋" },
+  { href: "/simulation", label: "Simulation", icon: "🎱" },
 ];
 
 const secondaryItems = [
