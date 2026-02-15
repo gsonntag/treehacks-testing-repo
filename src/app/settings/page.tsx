@@ -21,13 +21,27 @@ export default function SettingsPage() {
             <p className="font-medium">Theme</p>
             <p className="text-sm opacity-70">Switch between light and dark mode</p>
           </div>
-          <button
-            onClick={toggleTheme}
-            className="px-4 py-2 rounded-lg border"
-            style={{ borderColor: "var(--border)" }}
-          >
-            {theme === "dark" ? "☀️ Light" : "🌙 Dark"}
-          </button>
+          <div className="flex items-center gap-3">
+            <span className="text-sm" style={{ color: theme === "dark" ? "var(--muted)" : "var(--foreground)" }}>☀️</span>
+            <button
+              onClick={toggleTheme}
+              className="relative w-14 h-7 rounded-full transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2"
+              style={{
+                backgroundColor: theme === "dark" ? "var(--primary)" : "var(--border)",
+              }}
+              role="switch"
+              aria-checked={theme === "dark"}
+              aria-label="Toggle dark mode"
+            >
+              <span
+                className="absolute top-1 w-5 h-5 rounded-full bg-white shadow transition-transform duration-200"
+                style={{
+                  transform: theme === "dark" ? "translateX(32px)" : "translateX(4px)",
+                }}
+              />
+            </button>
+            <span className="text-sm" style={{ color: theme === "dark" ? "var(--foreground)" : "var(--muted)" }}>🌙</span>
+          </div>
         </div>
       </div>
 
