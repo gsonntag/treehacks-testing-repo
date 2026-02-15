@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { BrazilianFlag } from "@/components/ui/BrazilianFlag";
 
 const navItems = [
   { href: "/", label: "Dashboard", icon: "📊" },
@@ -80,8 +81,14 @@ export function Sidebar() {
       </nav>
 
       {!collapsed && (
-        <div className="p-3 border-t text-xs opacity-60" style={{ borderColor: "var(--border)" }}>
-          v2.4.1 • CommandHub
+        <div className="p-3 border-t" style={{ borderColor: "var(--border)" }}>
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-xs opacity-60">v2.4.1 • CommandHub</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <BrazilianFlag size={28} />
+            <span className="text-xs" style={{ color: "var(--miami-yellow)" }}>🌴 Miami Vibes</span>
+          </div>
         </div>
       )}
     </aside>
