@@ -34,6 +34,23 @@
   --sidebar-bg: #f6f8fa;
 }
 
+[data-theme="miami"] {
+  --background: #1a1a2e;
+  --foreground: #eaf4f4;
+  --muted: #a7c4c2;
+  --border: #3d5a80;
+  --primary: #00d4aa;
+  --primary-hover: #00f5c4;
+  --secondary: #ff6b9d;
+  --accent: #ffd93d;
+  --danger: #ff4757;
+  --warning: #ffa502;
+  --card-bg: #16213e;
+  --card-border: #3d5a80;
+  --input-bg: #0f0f23;
+  --sidebar-bg: #0f0f23;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
