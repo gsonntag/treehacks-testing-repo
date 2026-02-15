@@ -1,11 +1,10 @@
 "use client";
 
-import { useTheme } from "@/components/ThemeProvider";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { Dropdown } from "@/components/ui/Dropdown";
 import { useState } from "react";
 
 export function Navbar() {
-  const { theme, toggleTheme } = useTheme();
   const [searchQuery, setSearchQuery] = useState("");
   const [notificationsOpen, setNotificationsOpen] = useState(false);
 
@@ -33,14 +32,7 @@ export function Navbar() {
       </div>
 
       <div className="flex items-center gap-2">
-        <button
-          onClick={toggleTheme}
-          className="p-2 rounded-lg hover:opacity-80 transition"
-          style={{ backgroundColor: "var(--input-bg)" }}
-          title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
-        >
-          {theme === "dark" ? "☀️" : "🌙"}
-        </button>
+        <ThemeToggle size="sm" />
 
         <div className="relative">
           <button
