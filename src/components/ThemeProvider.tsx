@@ -2,11 +2,14 @@
 
 import { createContext, useContext, useEffect, useState } from "react";
 
-type Theme = "dark" | "light";
+type Theme = "dark" | "light" | "miami";
+
+const THEME_ORDER: Theme[] = ["dark", "light", "miami"];
 
 interface ThemeContextType {
   theme: Theme;
   toggleTheme: () => void;
+  setTheme: (theme: Theme) => void;
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
@@ -27,14 +30,21 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   const toggleTheme = () => {
-    const next = theme === "dark" ? "light" : "dark";
+    const currentIndex = THEME_ORDER.indexOf(theme);
+    const next = THEME_ORDER[(currentIndex + 1) % THEME_ORDER.length];
     setTheme(next);
     document.documentElement.setAttribute("data-theme", next);
     localStorage.setItem("theme", next);
   };
 
+  const applyTheme = (t: Theme) => {
+    setTheme(t);
+    document.documentElement.setAttribute("data-theme", t);
+    localStorage.setItem("theme", t);
+  };
+
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <ThemeContext.Provider value={{ theme, toggleTheme, setTheme: applyTheme }}>
       {children}
     </ThemeContext.Provider>
   );
