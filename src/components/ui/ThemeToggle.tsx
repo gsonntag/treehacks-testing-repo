@@ -2,6 +2,24 @@
 
 import { useTheme } from "@/components/ThemeProvider";
 
+const themeLabels: Record<string, string> = {
+  dark: "Dark",
+  light: "Light",
+  miami: "Miami",
+};
+
+const themeIcons: Record<string, string> = {
+  dark: "🌙",
+  light: "☀️",
+  miami: "🌴",
+};
+
+const nextTheme: Record<string, string> = {
+  dark: "light",
+  light: "miami",
+  miami: "dark",
+};
+
 interface ThemeToggleProps {
   showLabel?: boolean;
   size?: "sm" | "md";
@@ -9,40 +27,32 @@ interface ThemeToggleProps {
 
 export function ThemeToggle({ showLabel = false, size = "md" }: ThemeToggleProps) {
   const { theme, toggleTheme } = useTheme();
-  const isLight = theme === "light";
 
-  const toggleWidth = size === "sm" ? "w-12" : "w-14";
-  const toggleHeight = size === "sm" ? "h-6" : "h-7";
-  const knobSize = size === "sm" ? "w-5 h-5" : "w-6 h-6";
-  const translateX = size === "sm" ? "translate-x-6" : "translate-x-7";
+  const btnPadding = size === "sm" ? "px-2.5 py-1" : "px-3 py-1.5";
+  const textSize = size === "sm" ? "text-xs" : "text-sm";
 
   return (
     <div className="flex items-center gap-3">
       {showLabel && (
         <span className="text-sm font-medium" style={{ color: "var(--foreground)" }}>
-          {isLight ? "Light" : "Dark"}
+          {themeLabels[theme]}
         </span>
       )}
       <button
         onClick={toggleTheme}
-        className={`${toggleWidth} ${toggleHeight} rounded-full p-0.5 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2`}
+        className={`${btnPadding} ${textSize} rounded-full transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 flex items-center gap-1.5 font-medium`}
         style={{
-          backgroundColor: isLight ? "var(--primary)" : "var(--border)",
+          backgroundColor: "var(--primary)",
+          color: "#fff",
           // @ts-expect-error CSS custom property
           "--tw-ring-offset-color": "var(--background)",
           "--tw-ring-color": "var(--primary)",
         }}
-        title={`Switch to ${isLight ? "dark" : "light"} mode`}
-        aria-label={`Switch to ${isLight ? "dark" : "light"} mode`}
+        title={`Switch to ${nextTheme[theme]} mode`}
+        aria-label={`Switch to ${nextTheme[theme]} mode`}
       >
-        <div
-          className={`${knobSize} rounded-full flex items-center justify-center transition-transform duration-300 ${
-            isLight ? translateX : "translate-x-0"
-          }`}
-          style={{ backgroundColor: "var(--card-bg)" }}
-        >
-          <span className="text-xs">{isLight ? "☀️" : "🌙"}</span>
-        </div>
+        <span>{themeIcons[theme]}</span>
+        <span>{themeLabels[theme]}</span>
       </button>
     </div>
   );

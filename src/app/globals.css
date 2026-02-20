@@ -34,6 +34,76 @@
   --sidebar-bg: #f6f8fa;
 }
 
+[data-theme="miami"] {
+  --background: #0a0a1a;
+  --foreground: #e0f0ff;
+  --muted: #7b8da6;
+  --border: #2a1a3e;
+  --primary: #ff2d95;
+  --primary-hover: #ff5aaf;
+  --secondary: #00e5ff;
+  --accent: #b042ff;
+  --danger: #ff4466;
+  --warning: #ffb300;
+  --card-bg: #12102a;
+  --card-border: #321a4e;
+  --input-bg: #0e0c22;
+  --sidebar-bg: #08061a;
+}
+
+/* Miami neon glow utility */
+[data-theme="miami"] .miami-glow {
+  text-shadow: 0 0 10px #ff2d95, 0 0 20px #ff2d95, 0 0 40px #ff2d95;
+}
+
+/* Team page intro animation */
+@keyframes miami-sweep {
+  0% {
+    transform: translateY(100%);
+    opacity: 1;
+  }
+  40% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes miami-text-glow {
+  0%, 100% {
+    text-shadow: 0 0 20px #ff2d95, 0 0 40px #00e5ff;
+    transform: scale(1);
+  }
+  50% {
+    text-shadow: 0 0 40px #ff2d95, 0 0 80px #00e5ff, 0 0 120px #b042ff;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes neon-bar {
+  0% { width: 0%; }
+  50% { width: 100%; }
+  100% { width: 0%; }
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
