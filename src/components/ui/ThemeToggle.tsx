@@ -7,42 +7,36 @@ interface ThemeToggleProps {
   size?: "sm" | "md";
 }
 
+const THEME_META: Record<string, { icon: string; label: string; next: string }> = {
+  dark: { icon: "🌙", label: "Dark", next: "light" },
+  light: { icon: "☀️", label: "Light", next: "miami" },
+  miami: { icon: "🌴", label: "Miami", next: "dark" },
+};
+
 export function ThemeToggle({ showLabel = false, size = "md" }: ThemeToggleProps) {
   const { theme, toggleTheme } = useTheme();
-  const isLight = theme === "light";
+  const meta = THEME_META[theme] || THEME_META.dark;
 
-  const toggleWidth = size === "sm" ? "w-12" : "w-14";
-  const toggleHeight = size === "sm" ? "h-6" : "h-7";
-  const knobSize = size === "sm" ? "w-5 h-5" : "w-6 h-6";
-  const translateX = size === "sm" ? "translate-x-6" : "translate-x-7";
+  const btnSize = size === "sm" ? "px-3 py-1.5 text-xs" : "px-4 py-2 text-sm";
 
   return (
     <div className="flex items-center gap-3">
-      {showLabel && (
-        <span className="text-sm font-medium" style={{ color: "var(--foreground)" }}>
-          {isLight ? "Light" : "Dark"}
-        </span>
-      )}
       <button
         onClick={toggleTheme}
-        className={`${toggleWidth} ${toggleHeight} rounded-full p-0.5 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2`}
+        className={`${btnSize} rounded-lg font-medium transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 flex items-center gap-2`}
         style={{
-          backgroundColor: isLight ? "var(--primary)" : "var(--border)",
+          backgroundColor: "var(--input-bg)",
+          color: "var(--foreground)",
+          border: "1px solid var(--border)",
           // @ts-expect-error CSS custom property
           "--tw-ring-offset-color": "var(--background)",
           "--tw-ring-color": "var(--primary)",
         }}
-        title={`Switch to ${isLight ? "dark" : "light"} mode`}
-        aria-label={`Switch to ${isLight ? "dark" : "light"} mode`}
+        title={`Switch to ${meta.next} mode`}
+        aria-label={`Switch to ${meta.next} mode`}
       >
-        <div
-          className={`${knobSize} rounded-full flex items-center justify-center transition-transform duration-300 ${
-            isLight ? translateX : "translate-x-0"
-          }`}
-          style={{ backgroundColor: "var(--card-bg)" }}
-        >
-          <span className="text-xs">{isLight ? "☀️" : "🌙"}</span>
-        </div>
+        <span>{meta.icon}</span>
+        {showLabel && <span>{meta.label}</span>}
       </button>
     </div>
   );

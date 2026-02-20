@@ -1,4 +1,8 @@
+"use client";
+
+import { useState, useCallback } from "react";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
+import { TeamSplashAnimation } from "@/components/team/TeamSplashAnimation";
 
 const members = [
   { name: "Jane Doe", role: "Admin", avatar: "JD", status: "Online" },
@@ -8,8 +12,13 @@ const members = [
 ];
 
 export default function TeamPage() {
+  const [showSplash, setShowSplash] = useState(true);
+  const handleSplashComplete = useCallback(() => setShowSplash(false), []);
+
   return (
-    <div className="space-y-8">
+    <>
+      {showSplash && <TeamSplashAnimation onComplete={handleSplashComplete} />}
+      <div className="space-y-8" style={{ animation: showSplash ? "none" : "fade-in-up 0.6s ease forwards" }}>
       <Breadcrumbs items={[{ label: "Dashboard", href: "/" }, { label: "Team" }]} />
       <div className="flex justify-between items-center">
         <h1 className="text-2xl font-bold">Team</h1>
@@ -52,6 +61,7 @@ export default function TeamPage() {
           </div>
         ))}
       </div>
-    </div>
+      </div>
+    </>
   );
 }
